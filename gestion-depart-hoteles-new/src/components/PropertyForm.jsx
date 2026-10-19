@@ -8,9 +8,9 @@ function PropertyForm({ onAddProperty }) {
     price: ""
   });
 
-  function GestionarCambio(evento) {
+  function GestionarCambio(event) {
 
-    const { name, value } = evento.target;
+    const { name, value } = event.target;
 
     setForm({
       ...form,
@@ -18,9 +18,9 @@ function PropertyForm({ onAddProperty }) {
     });
   }
 
-  function GestionarEnvio(evento) {
+  function GestionarEnvio(event) {
 
-    evento.preventDefault();
+    event.preventDefault();
 
     if (!form.name || !form.location || !form.price) {
       alert("Completa todos los campos.");
@@ -39,8 +39,8 @@ function PropertyForm({ onAddProperty }) {
 
   return (
     <section className="form-section">
-
-      <h2>Agregar alojamiento</h2>
+      
+      <h2>Agregar alojamiento new</h2>
 
       <form onSubmit={GestionarEnvio}>
 

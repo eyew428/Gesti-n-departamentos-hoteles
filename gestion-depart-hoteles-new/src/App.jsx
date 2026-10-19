@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './styles/App.css';
 import PropertyForm from './components/PropertyForm';
+import PropertyCard from './components/PropertyCard';
 
 function App() {
   const [] = useState();
 
+  const [search, setSearch] = useState("");
   const [properties, setProperties] = useState([
     {
       id: 1,
@@ -29,7 +31,6 @@ function App() {
     }
   ]);
 
-  const [search, setSearch] = useState("");
 
   function addProperty(property) {
 
@@ -41,7 +42,6 @@ function App() {
     setProperties([...properties, newProperty]);
   }
 
-
   return (
     
     <>
@@ -51,13 +51,13 @@ function App() {
    <h1 className='titulo'>Gestión de Departamentos y hoteles del Uruguay</h1>
 
     <nav>
-      <a href="inicio">Inicio</a>
+      <a href="#">Inicio</a>
       
-      <a href="alojamientos">
+      <a href="#Alojamientos">
         Alojamientos
       </a>
       
-      <a href="reservas">
+      <a href="#Reservas">
         Reservas
       </a>
 
@@ -81,6 +81,7 @@ function App() {
   </body>
 
   <PropertyForm onAddProperty={addProperty} />
+  <PropertyCard />
 
 <section className="properties">
 

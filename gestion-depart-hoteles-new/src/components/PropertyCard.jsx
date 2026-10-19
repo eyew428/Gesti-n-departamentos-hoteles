@@ -1,6 +1,10 @@
 // Recibimos la propiedad mediante props.
 function PropertyCard({ property }) {
 
+  if(!property)
+
+  return <p>No hay información del alojamiento</p>
+
   return (
     <article className="property-card">
 
@@ -39,5 +43,4 @@ function PropertyCard({ property }) {
   );
 }
 
-// Exportamos el componente.
 export default PropertyCard;
