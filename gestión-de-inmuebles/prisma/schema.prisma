@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Cliente {
+  id        String      @id @default(uuid())
+  nombre    String
+  email     String   @unique
+  tel       String
+  alquiler   Alquiler[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Alquiler {
+  id        String      @id @default(uuid())
+
+  clienteId String
+  cliente   Cliente  @relation(fields: [clienteId], references: [id])
+
+  detalles  DetalleAlquiler[]
+
+  fecha     DateTime @default(now())
+  impuesto  Decimal
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Inmueble {
+  id        String      @id @default(uuid())
+  nombre    String
+  precio    Decimal
+
+  detalles  DetalleAlquiler[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+	@@map("Inmueble")
+}
+
+model DetalleAlquiler {
+  id         String      @id @default(uuid())
+
+  alquilerId   String
+  inmuebleId String
+
+  alquiler   Alquiler   @relation(fields: [alquilerId], references: [id])
+  inmueble   Inmueble @relation(fields: [inmuebleId], references: [id])
+
+  cantidad   Int  
+  precio     Decimal
+}
