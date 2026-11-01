@@ -17,6 +17,7 @@ model Cliente {
   nombre    String
   email     String   @unique
   tel       String
+  contraseña String
   alquiler   Alquiler[]
 
   createdAt DateTime @default(now())

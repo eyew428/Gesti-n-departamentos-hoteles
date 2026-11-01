@@ -1,0 +1,22 @@
+get http://localhost:8080/cliente
+###
+get http://localhost:8080/cliente/61ffe7fd-7046-4a04-953f-23dcf340a11f
+###
+post http://localhost:8080/cliente
+Content-Type: application/json
+
+{
+    "nombre": "Franklin Miranda",
+    "email": "franklin@example.com",
+    "contraseña": "12345"
+}
+###
+post http://localhost:8080/cliente/login
+Content-Type: application/json
+
+{
+    "email": "franklin@example.com",
+    "contraseña": "12345"
+}
+###
+post http://localhost:8080/cliente/logout

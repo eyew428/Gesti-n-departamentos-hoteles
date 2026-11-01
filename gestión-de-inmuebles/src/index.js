@@ -1,5 +1,9 @@
+import "dotenv/config";
 import app from "./app.js";
-const PORT = 3000
+import { connectDB } from "./bin/prisma.js";
+
+const PORT = process.env.PORT || 3000;
+connectDB
 
 function bootstrang () {
 app.listen(PORT, () => {
