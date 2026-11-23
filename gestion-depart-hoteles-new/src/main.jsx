@@ -2,20 +2,23 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './styles/App.css'
-import PropertyForm from './components/PropertyForm.jsx'
-import PropertyCard from './components/PropertyCard.jsx'
 import Login from './pages/login.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
+import { Header } from './layout/Header.jsx'
+import MainLayout from './layout/MainLayout.jsx'
+import { SideBar } from './layout/SideBar.jsx'
+import { BrowserRouter } from 'react-router'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-    <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/login" element={<Login />} />
-    </Routes>
+    <BrowserRouter>
+    <App />
+    <Login />
+    </BrowserRouter>
+    <Header />
+    <MainLayout />
+    <SideBar />
     </AuthProvider>
-    <PropertyForm />
-    <PropertyCard />
   </StrictMode>
 )
