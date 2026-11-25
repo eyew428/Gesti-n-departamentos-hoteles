@@ -4,7 +4,7 @@ import bcrypt from "bcrypt"
 async function seed() {
 
 //CLIENTES
-const hashedPassword = await bcrypt.hash("12345", 10);
+const hashedPassword = await bcrypt.hash("12345678", 10);
 /* await prismaDB.cliente.upsert({
   where: {id: "1"},
   update: {},  
