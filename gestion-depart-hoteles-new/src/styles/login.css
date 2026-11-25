@@ -1,0 +1,30 @@
+.main-layout {
+    background-color: rgba(1, 56, 66, 0.904);
+    padding: 100x;
+    height: 1300px;
+    width: auto;
+
+}
+
+.heading-2 {
+    text-align: center;
+    padding: 60;
+    border-radius: 20px;
+    width: auto;
+    
+}
+
+.card {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    width: auto;
+
+}
+
+.form-label {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    width: auto;
+}

@@ -37,7 +37,7 @@ const Login = () => {
     <div className="main-layout">
       <main className="content">
         <div className="content-inner">
-          <section className="section login">
+          <section className="section-login">
             <div className="section-header">
               <h2 className="heading-2">Login</h2>
             </div>
