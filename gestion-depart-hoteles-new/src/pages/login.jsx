@@ -3,8 +3,8 @@ import { useNavigate } from "react-router";
 import { useAuth } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const [userName, setUsername] = useState("franklin@example.com");
-  const [password, setPassword] = useState("123456");
+  const [userName, setUsername] = useState("leo2@example.com");
+  const [password, setPassword] = useState("12345678");
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const { login, user, check } = useAuth();

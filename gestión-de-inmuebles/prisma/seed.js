@@ -39,18 +39,19 @@ await prismaDB.cliente.upsert({
 
   },
 });
-
+*/
 await prismaDB.cliente.upsert({
   where: {id: "4"},
   update: {},  
   create: {
     nombre: "Leo Acosta",
-    email: "leo@example.com",
+    email: "leo2@example.com",
     tel: "99999999",
     contraseña: hashedPassword
 
   },
-}); */
+  
+}); 
 
 //INMUEBLES
 

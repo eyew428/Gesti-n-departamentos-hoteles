@@ -104,8 +104,8 @@ export async function login(req, res) {
 
     //se comprueba que el body no esta vacio
     let clienteBody = req.body
-    if(clienteBody == null)
-    return res.status(404).json({ message: "Credenciales invalidas" })
+    if(clienteBody == null || clienteBody.contraseña==null)
+    return res.status(401).json({ message: "Credenciales invalidas" })
 
     //busca a el cliente en la base de datos
 
@@ -115,15 +115,16 @@ export async function login(req, res) {
     }
 })
 
+
   if(cliente == null)
-    return res.status(404).json({ message: "Credenciales invalidas" })
+    return res.status(401).json({ message: "Credenciales invalidas" })
 
 
     //combrobar la contraseña
 
     const contraseñaValida = await bcrypt.compare(clienteBody.contraseña,cliente.contraseña)
     if(!contraseñaValida)
-        return res.status(404).json({ message: "Credenciales invalidas" })
+        return res.status(401).json({ message: "Credenciales invalidas" })
 
     //generar token de acceso
 

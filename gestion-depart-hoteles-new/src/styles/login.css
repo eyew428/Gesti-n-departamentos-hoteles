@@ -1,30 +1,253 @@
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+
+/* Elimina márgenes y configura el tamaño de los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general de la página */
 .main-layout {
-    background-color: rgba(1, 56, 66, 0.904);
-    padding: 100x;
-    height: 1300px;
-    width: auto;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f6fa;
+  font-family: "Segoe UI", Arial, sans-serif;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Contenedor principal */
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Contenedor interno */
+.content-inner {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* =========================================
+   SECCIÓN LOGIN
+   ========================================= */
+
+.section-login {
+  width: 100%;
+}
+
+/* Encabezado del formulario */
+.section-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Título Login */
 .heading-2 {
-    text-align: center;
-    padding: 60;
-    border-radius: 20px;
-    width: auto;
-    
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.8px;
 }
+
+/* =========================================
+   TARJETA DEL LOGIN
+   ========================================= */
 
 .card {
-    text-align: center;
-    padding: 40px;
-    border-radius: 20px;
-    width: auto;
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
 
+  padding: 40px;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.07);
+
+  border: 1px solid #e8edf3;
 }
 
+/* =========================================
+   CAMPOS DEL FORMULARIO
+   ========================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Etiquetas de los campos */
 .form-label {
-    text-align: center;
-    padding: 40px;
-    border-radius: 20px;
-    width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 12px;
+}
+
+/* Campos de texto y contraseña */
+.input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 15px;
+
+  border: 1px solid #dce2ea;
+  border-radius: 9px;
+
+  background: #f9fafc;
+
+  font-size: 14px;
+  color: #1e293b;
+
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* Texto de ejemplo dentro del input */
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* Efecto al seleccionar un campo */
+.input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+
+/* Contenedor de los botones */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Estilos generales de los botones */
+.btn {
+  height: 46px;
+  padding: 0 25px;
+
+  border-radius: 9px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Botón cancelar */
+.btn-outline {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #dce2ea;
+}
+
+/* Efecto hover de cancelar */
+.btn-outline:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Botón entrar */
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+/* Efecto hover de entrar */
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+/* Efecto al presionar un botón */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   MENSAJES DE RESPUESTA
+   ========================================= */
+
+.section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Estilos generales de las alertas */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 16px;
+  border-radius: 10px;
+
+  font-size: 14px;
+}
+
+/* Mensaje de inicio de sesión exitoso */
+.alert-success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+}
+
+/* Mensaje de error */
+.alert-danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+/* Texto pequeño de las alertas */
+.text-sm {
+  font-size: 13px;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+   ========================================= */
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .heading-2 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 25px 20px;
+  }
+
+  .btn {
+    padding: 0 18px;
+  }
 }

@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const checkAuth = () => {
-    api("/clientes/me")
+    api("/cliente/me")
       .then((res) => {
         if (!res.ok) {
           setUser(null);
@@ -40,17 +40,17 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (username, password) => {
-    return await api("/clientes/login", {
+    return await api("/cliente/login", {
       method: "POST",
       body: JSON.stringify({
         email: username,
-        password,
+        contraseña: password,
       }),
     });
   };
 
   const logout = () => {
-    api("/clientes/logout", {
+    api("/cliente/logout", {
       method: "POST",
     });
     setLogged(false);
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const createCliente = async ({ nombre, telefono, email, password, rol }) => {
-    return await api("/clientes", {
+    return await api("/cliente", {
       method: "POST",
       body: JSON.stringify({
         nombre,

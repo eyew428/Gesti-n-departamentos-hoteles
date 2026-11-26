@@ -8,15 +8,15 @@ Content-Type: application/json
 {
     "nombre": "Franklin Miranda",
     "email": "franklin@example.com",
-    "contraseña": "12345"
+    "contraseña": "12345678"
 }
 ###
 post http://localhost:8080/cliente/login
 Content-Type: application/json
 
 {
-    "email": "franklin@example.com",
-    "contraseña": "12345"
+    "email": "leo2@example.com",
+    "contraseña": "12345678"
 }
 ###
 post http://localhost:8080/cliente/logout
