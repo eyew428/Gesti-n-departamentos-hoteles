@@ -1,6 +1,8 @@
 import { Link, Outlet } from "react-router";
 import { Header } from "./Header.jsx";
 import { SideBar } from "./SideBar.jsx";
+import "../styles/MainLayout.css"
+
 
 const MainLayout = () => {
   return (

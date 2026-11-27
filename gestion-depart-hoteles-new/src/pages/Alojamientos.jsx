@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Alojamientos({ onAddAlojamientos }) {
 
- const [forma, setForma] = useState({
+ const [form, setForma] = useState({
     nombre: "",
     tipo: "Hotel",
     localizacion: "",
@@ -14,7 +14,7 @@ function Alojamientos({ onAddAlojamientos }) {
     const { nombre, value } = event.target;
 
     setForma({
-      ...forma,
+      ...form,
       [nombre]: value
     });
   }
@@ -23,12 +23,12 @@ function Alojamientos({ onAddAlojamientos }) {
 
     event.preventDefault();
 
-    if (!forma.nombre || !forma.localizacion || !forma.precio) {
+    if (!form.nombre || !form.localizacion || !form.precio) {
       alert("Completa todos los campos.");
       return;
     }
 
-    onAddAlojamientos(forma);
+    onAddAlojamientos(form);
 
     setForma({
       nombre: "",
@@ -43,7 +43,7 @@ function Alojamientos({ onAddAlojamientos }) {
         <>
  <section className="form-section">
       
-      <h2>Agregar alojamiento</h2>
+      <h2>Buscar alojamiento</h2>
 
       <form onSubmit={GestionarEnvio}>
 
@@ -88,7 +88,7 @@ function Alojamientos({ onAddAlojamientos }) {
         <button
           type="submit"
           className="button-primary">
-          Agregar alojamiento
+          Buscar alojamiento
         </button>
 
       </form>
